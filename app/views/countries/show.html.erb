@@ -7,7 +7,7 @@
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @country.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:flag) %>:</strong></dt>
-  <dd><%= @country.flag %></dd>
+  <dd><img src="<%= @country.flag %>" style="width:300px" /></dd>
   <dt><strong><%= model_class.human_attribute_name(:weatherLink) %>:</strong></dt>
   <dd><%= @country.weatherLink %></dd>
 </dl>
