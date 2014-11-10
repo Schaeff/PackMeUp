@@ -1,5 +1,8 @@
 class CountriesController < ApplicationController
-  before_action :set_country, only: [:show, :edit, :update, :destroy]
+  before_action :set_country, only: [:show, :edit, :update, :destroy, :travel]
+
+  skip_before_action :verify_authenticity_token, only: [:travel]
+
 
   # GET /countries
   # GET /countries.json
@@ -60,6 +63,23 @@ class CountriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # POST /countries/1/travel.json
+  def travel
+    # On crée un nouvel objet booking à partir des paramètres reçus
+    @travel = Booking.new(travel_params)
+    # On précise que cet object Booking dépend du show concerné
+    @travel.country = @country
+
+    respond_to do |format|
+      if @travel.save
+        format.json
+      else
+        format.json { render json: @travel.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
