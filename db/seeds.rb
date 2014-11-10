@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#Populate countries table
+
+Country.create([{name: 'France'}, {name: 'Brazil'}, {name: 'Argentina'}, {name: 'Italy'}, {name: 'Japan'}, {name: 'Slovenia'}])
+
+#Populate items table
+
+Item.create([{name: 'Shoes'}, {name: 'Coat'}, {name: 'T-shirt'}, {name: 'Scarf'}, {name: 'Gloves'}, {name: 'Jeans'}])
+
+#Populate users table
+
+User.create([{name: 'Robert', country: Country.first}])

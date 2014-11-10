@@ -40,3 +40,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 # use twitter bootstrap
 gem "twitter-bootstrap-rails"
+
+gem "acts_as_tree"
