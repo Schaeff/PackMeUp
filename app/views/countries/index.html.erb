@@ -18,8 +18,8 @@
       <tr>
         <td><%= link_to country.id, country_path(country) %></td>
         <td><%= country.name %></td>
-        <td><%= country.flag %></td>
-        <td><%= country.weatherLink %></td>
+        <td><img src="<%= country.flag %>" style="width:20px" /></td>
+        <td><%= link_to 'JSON', country.weatherLink, :class => 'btn btn-default btn-xs' %></td>
         <td><%=l country.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

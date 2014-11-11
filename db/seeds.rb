@@ -8,7 +8,7 @@
 
 #Populate countries table
 
-Country.create([{name: 'France'}, {name: 'Brazil'}, {name: 'Argentina'}, {name: 'Italy'}, {name: 'Japan'}, {name: 'Slovenia'}])
+Country.create([{name: 'France', flag: 'http://www.crwflags.com/fotw/images/f/fr.gif', weatherLink: 'http://api.openweathermap.org/data/2.5/forecast?q=paris'}, {name: 'Brazil', flag: 'http://www.crwflags.com/fotw/images/b/br.gif', weatherLink: 'http://api.openweathermap.org/data/2.5/forecast?q=rio_de_janeiro'}, {name: 'Argentina', flag: 'http://www.crwflags.com/fotw/images/a/ar.gif', weatherLink: 'http://api.openweathermap.org/data/2.5/forecast?q=buenos_aires'}, {name: 'Italy', flag: 'http://www.crwflags.com/fotw/images/i/it.gif', weatherLink: 'http://api.openweathermap.org/data/2.5/forecast?q=rome'}, {name: 'Japan', flag: 'http://www.crwflags.com/fotw/images/j/jp.gif', weatherLink: 'http://api.openweathermap.org/data/2.5/forecast?q=tokyo'}, {name: 'Slovenia', flag: 'http://www.crwflags.com/fotw/images/s/si.gif', weatherLink: 'http://api.openweathermap.org/data/2.5/forecast?q=ljubljana'}])
 
 #Populate items table
 
