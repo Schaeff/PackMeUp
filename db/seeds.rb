@@ -12,15 +12,17 @@ Country.create([{name: 'France', flag: 'http://www.crwflags.com/fotw/images/f/fr
 
 #Populate item_types table
 
-ItemType.create({name: 'root', parent: nil})
+@root = ItemType.create({name: 'root', parent: nil})
 
 #Populate items table
 
-Item.create([{name: 'Shoes'}, {name: 'Coat'}, {name: 'T-shirt'}, {name: 'Scarf'}, {name: 'Gloves'}, {name: 'Jeans'}])
-Item.all.each do |item|
-	ItemType.first.item.append(item)
+Item.create([{name: 'Shoes', item_type: @root}, {name: 'Coat'}, {name: 'T-shirt'}, {name: 'Scarf'}, {name: 'Gloves'}, {name: 'Jeans'}])
+
+#Item.all.each do |item|
+#	ItemType.first.item.append(item)
 	#item.item_type_id = ItemType.first.id
-end
+#end
+
 
 #Populate users table
 

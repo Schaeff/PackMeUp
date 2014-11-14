@@ -8,7 +8,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:flag) %></th>
-      <th><%= model_class.human_attribute_name(:user) %></th>
+      <th><%= model_class.human_attribute_name(:users) %></th>
       <th><%= model_class.human_attribute_name(:weatherLink) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -20,7 +20,7 @@
         <td><%= link_to country.id, country_path(country) %></td>
         <td><%= country.name %></td>
         <td><img src="<%= country.flag %>" style="width:20px" /></td>
-        <td><%= country.user %></td>
+        <td><%= country.user.pluck(:name).join(", ") if !country.user.empty? %></td>
         <td><%= link_to 'JSON', country.weatherLink, :class => 'btn btn-default btn-xs' %></td>
         <td><%=l country.created_at %></td>
         <td>
