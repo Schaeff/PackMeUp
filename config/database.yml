@@ -11,7 +11,7 @@ default: &default
 
 development:
   adapter: sqlite3
-  database: db/packmeup_dev.sqlite3
+  database: db/PackItUp_dev.sqlite3
   pool: 5
   timeout: 5000
 

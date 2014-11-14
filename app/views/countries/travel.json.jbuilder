@@ -1,1 +1,1 @@
-json.extract! @travel, :id, :user, :country
+json.extract! @travel, :user_id, :country_id

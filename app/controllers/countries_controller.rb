@@ -66,10 +66,10 @@ class CountriesController < ApplicationController
 
   # POST /countries/1/travel.json
   def travel
-    # On crée un nouvel objet booking à partir des paramètres reçus
-    @travel = Booking.new(travel_params)
-    # On précise que cet object Booking dépend du show concerné
-    @travel.country = @country
+    # On crée un nouvel objet travel à partir des paramètres reçus
+    @travel = Travel.new(travel_params)
+    # On précise que cet object Travel dépend du country concerné
+    #@travel.country = @country
 
     respond_to do |format|
       if @travel.save
@@ -90,5 +90,10 @@ class CountriesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def country_params
       params.require(:country).permit(:name, :flag, :weatherLink)
+    end
+
+        # On ajoute les paramètres qu'on va envoyer avec le booking
+    def travel_params
+      params.require(:travel).permit(:user_id, :country_id)
     end
 end
