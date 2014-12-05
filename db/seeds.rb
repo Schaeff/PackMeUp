@@ -13,6 +13,7 @@ Country.create([{name: 'France', flag: 'http://www.crwflags.com/fotw/images/f/fr
 #Populate item_types table
 
 @root = ItemType.create({name: 'root', parent: nil})
+@item = @root.children.create({name: 'item'})
 
 #Populate items table
 
