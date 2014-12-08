@@ -27,3 +27,11 @@ Item.create([{name: 'Shoes', item_type: @root}, {name: 'Coat'}, {name: 'T-shirt'
 #Populate users table
 
 User.create([{name: 'Robert', country: Country.first}])
+
+#Populate suitcases table
+
+Country.all.each do |c|
+	Suitcase.create({country: c, weather: "hot"})
+	Suitcase.create({country: c, weather: "cold"})
+end
+

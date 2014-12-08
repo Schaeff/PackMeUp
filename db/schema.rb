@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208135159) do
+ActiveRecord::Schema.define(version: 20141208203550) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -35,6 +35,11 @@ ActiveRecord::Schema.define(version: 20141208135159) do
     t.integer  "item_type_id"
   end
 
+  create_table "items_suitcases", id: false, force: true do |t|
+    t.integer "item_id"
+    t.integer "suitcase_id"
+  end
+
   create_table "sessions", force: true do |t|
     t.integer  "user_id"
     t.string   "status"
@@ -43,6 +48,16 @@ ActiveRecord::Schema.define(version: 20141208135159) do
   end
 
   add_index "sessions", ["user_id"], name: "index_sessions_on_user_id"
+
+  create_table "suitcases", force: true do |t|
+    t.integer  "country_id"
+    t.string   "weather"
+    t.integer  "item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "suitcases", ["country_id"], name: "index_suitcases_on_country_id"
 
   create_table "travels", force: true do |t|
     t.integer  "user_id"
