@@ -29,15 +29,15 @@ class CountriesController < ApplicationController
   def create
     @country = Country.new(country_params[:country])
 
-    # respond_to do |format|
-    #   if @country.save
-    #     format.html { redirect_to @country, notice: 'Country was successfully created.' }
-    #     format.json { render :show, status: :created, location: @country }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @country.errors, status: :unprocessable_entity }
-    #   end
-    #
+    respond_to do |format|
+      if @country.save
+        format.html { redirect_to @country, notice: 'Country was successfully created.' }
+        format.json { render :show, status: :created, location: @country }
+      else
+        format.html { render :new }
+        format.json { render json: @country.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /countries/1
