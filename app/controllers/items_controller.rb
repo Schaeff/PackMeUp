@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :verify_authenticity_token, only: [:create]
+
 
   # GET /items
   # GET /items.json
@@ -25,6 +27,7 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
+    @item.name = item_params(:name);
 
     respond_to do |format|
       if @item.save

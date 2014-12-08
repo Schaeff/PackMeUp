@@ -1,7 +1,7 @@
 class CountriesController < ApplicationController
   before_action :set_country, only: [:show, :edit, :update, :destroy, :travel]
 
-  skip_before_action :verify_authenticity_token, only: [:travel]
+  skip_before_action :verify_authenticity_token, only: [:travel,:create]
 
 
   # GET /countries
@@ -27,17 +27,17 @@ class CountriesController < ApplicationController
   # POST /countries
   # POST /countries.json
   def create
-    @country = Country.new(country_params)
+    @country = Country.new(country_params[:country])
 
-    respond_to do |format|
-      if @country.save
-        format.html { redirect_to @country, notice: 'Country was successfully created.' }
-        format.json { render :show, status: :created, location: @country }
-      else
-        format.html { render :new }
-        format.json { render json: @country.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @country.save
+    #     format.html { redirect_to @country, notice: 'Country was successfully created.' }
+    #     format.json { render :show, status: :created, location: @country }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @country.errors, status: :unprocessable_entity }
+    #   end
+    #
   end
 
   # PATCH/PUT /countries/1
