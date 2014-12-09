@@ -27,3 +27,12 @@ Fermer une session
 
 param : id
 //TODO
+
+Demander une valise
+
+POST /suitcases.json HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+Cache-Control: no-cache
+
+{ "suitcase": { "country": "France", "weather": "hot" } }
