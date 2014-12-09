@@ -17,7 +17,7 @@
       <tr>
         <td><%= link_to user.id, user_path(user) %></td>
         <td><%= user.name %></td>
-        <td><%= user.country.name %></td>
+        <td><%= user.country.name if user.country %></td>
         <td><%=l user.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

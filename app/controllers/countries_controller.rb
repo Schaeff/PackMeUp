@@ -1,7 +1,7 @@
 class CountriesController < ApplicationController
   before_action :set_country, only: [:show, :edit, :update, :destroy, :travel]
 
-  skip_before_action :verify_authenticity_token, only: [:travel]
+  skip_before_action :verify_authenticity_token, only: [:travel,:create]
 
 
   # GET /countries
@@ -27,7 +27,7 @@ class CountriesController < ApplicationController
   # POST /countries
   # POST /countries.json
   def create
-    @country = Country.new(country_params)
+    @country = Country.new(country_params[:country])
 
     respond_to do |format|
       if @country.save
