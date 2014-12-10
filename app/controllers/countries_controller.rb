@@ -8,6 +8,7 @@ class CountriesController < ApplicationController
   # GET /countries.json
   def index
     @countries = Country.all
+    render json: {countries: @countries}
   end
 
   # GET /countries/1
