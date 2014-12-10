@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208203550) do
+ActiveRecord::Schema.define(version: 20141210143623) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -38,6 +38,11 @@ ActiveRecord::Schema.define(version: 20141208203550) do
   create_table "items_suitcases", id: false, force: true do |t|
     t.integer "item_id"
     t.integer "suitcase_id"
+  end
+
+  create_table "items_u_suitcases_joins", id: false, force: true do |t|
+    t.integer "item_id"
+    t.integer "u_suitcase_id"
   end
 
   create_table "sessions", force: true do |t|
@@ -68,6 +73,17 @@ ActiveRecord::Schema.define(version: 20141208203550) do
 
   add_index "travels", ["country_id"], name: "index_travels_on_country_id"
   add_index "travels", ["user_id"], name: "index_travels_on_user_id"
+
+  create_table "u_suitcases", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "country_id"
+    t.string   "weather"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "u_suitcases", ["country_id"], name: "index_u_suitcases_on_country_id"
+  add_index "u_suitcases", ["user_id"], name: "index_u_suitcases_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

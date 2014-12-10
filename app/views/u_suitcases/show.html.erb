@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @u_suitcase.user %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @u_suitcase.country %>
+</p>
+
+<p>
+  <strong>Weather:</strong>
+  <%= @u_suitcase.weather %>
+</p>
+
+<%= link_to 'Edit', edit_u_suitcase_path(@u_suitcase) %> |
+<%= link_to 'Back', u_suitcases_path %>

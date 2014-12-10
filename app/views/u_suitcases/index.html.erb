@@ -1,0 +1,29 @@
+<h1>Listing u_suitcases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Country</th>
+      <th>Weather</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @u_suitcases.each do |u_suitcase| %>
+      <tr>
+        <td><%= u_suitcase.user %></td>
+        <td><%= u_suitcase.country %></td>
+        <td><%= u_suitcase.weather %></td>
+        <td><%= link_to 'Show', u_suitcase %></td>
+        <td><%= link_to 'Edit', edit_u_suitcase_path(u_suitcase) %></td>
+        <td><%= link_to 'Destroy', u_suitcase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New U suitcase', new_u_suitcase_path %>

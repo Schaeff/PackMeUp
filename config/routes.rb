@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :u_suitcases
+
   resources :sessions
 
   resources :item_types
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
 
   #post 'countries/:id/travel' => 'countries#travel'
   post 'suitcases' => 'suitcases#find_suitcase'
+  post 'u_suitcases/get_u_suitcases' => 'u_suitcases#get_user_suitcases'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
