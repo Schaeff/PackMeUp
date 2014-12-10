@@ -6,8 +6,9 @@ class SuitcasesController < ApplicationController
 		weather = suitcase_params[:weather]
 		@suitcase = Suitcase.find_by weather: weather, country: country
 
+
 		respond_to do |format|
-			format.json  {render json: @suitcase}
+			format.json  {render json: @suitcase.items}
 		end
 	end
 
