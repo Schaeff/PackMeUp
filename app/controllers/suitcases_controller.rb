@@ -8,7 +8,7 @@ class SuitcasesController < ApplicationController
 
 
 		respond_to do |format|
-			format.json  {render json: @suitcase.items}
+			format.json  {render json: {:suitcase => @suitcase.items}}
 		end
 	end
 
